@@ -16,7 +16,7 @@
 
 (defn get-neighbour-coords [[i j]]
   (for [di [-1 0 1] dj [-1 0 1]
-        :when (not (and (= di 0) (= dj 0)))]
+        :when (not= 0 di dj)]
     [(+ i di) (+ j dj)]))
 
 (defn is-paper? [board coords]
