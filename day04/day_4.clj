@@ -26,7 +26,7 @@
 
 (defn clean-board [board]
   (loop [current-board board]
-    (let [reachable (all-reachable current-board)]
+    (let [reachable (set (all-reachable current-board))]
       (if (empty? reachable)
         (- (count board) (count current-board))
         (recur (set/difference current-board reachable))))))
